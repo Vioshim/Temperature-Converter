@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Temperature Converter</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="index.js"></script>
+</head>
+
+<body>
+  <header class="header py-3">
+    <div class="container text-center">
+      <h1>Temperature Converter</h1>
+    </div>
+  </header>
+  <div class="container mt-3">
+    <form id="tempForm">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="from">From</label>
+          <select class="form-control" id="from" name="from">
+            <option value="Celsius">Celsius</option>
+            <option value="Fahrenheit">Fahrenheit</option>
+            <option value="Kelvin">Kelvin</option>
+          </select>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="to">To</label>
+          <select class="form-control" id="to" name="to">
+            <option value="Celsius">Celsius</option>
+            <option value="Fahrenheit" selected>Fahrenheit</option>
+            <option value="Kelvin">Kelvin</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="tempInput">Temperature</label>
+        <input type="number" class="form-control" id="value" name="value" placeholder="Enter temperature" required autofocus />
+      </div>
+      <button type="button" class="btn btn-primary col-12" id="convertBtn" onclick="convertTemperature()">
+        Convert
+      </button>
+    </form>
+
+    <div class="result-table-container container mt-3">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>From</th>
+            <th>To</th>
+            <th>Result</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td id="result_from"></td>
+            <td id="result_to"></td>
+            <td id="result_value"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <footer class="footer py-3">
+    <div class="container text-center mt-auto">
+      <span class="w-100 d-block">Shift + Enter to flip the temperature conversion</span>
+    </div>
+  </footer>
+</body>
+
+</html>
